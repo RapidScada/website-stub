@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rapid SCADA — сайт временно недоступен</title>
+<meta name="description" content="Сайт Rapid SCADA временно недоступен из-за проблем у хостинг-провайдера. Документация и дистрибутивы доступны по ссылкам на этой странице.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#eef2f6; --panel:#ffffff; --ink:#14212e; --muted:#5a6b7c; --line:#cdd7e1;
+  --brand:#0b5cab; --brand-ink:#ffffff; --ok:#1f9d55; --down:#d64545;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0f1720; --panel:#17222e; --ink:#e6edf4; --muted:#9bacbd; --line:#2a3a4a;
+    --brand:#5ba8ee; --brand-ink:#0f1720; --ok:#3ecf7a; --down:#ff6b6b;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  padding:32px 20px;
+}
+main{width:100%; max-width:720px; margin:0 auto}
+header{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px}
+.logo{font-size:1.25rem; font-weight:700}
+.logo span{color:var(--brand)}
+.lang{display:flex; border:1px solid var(--line); border-radius:6px; overflow:hidden}
+.lang button{background:transparent; color:var(--muted); border:0; padding:6px 12px; font:inherit; font-size:.875rem; cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--brand); color:var(--brand-ink)}
+button:focus-visible,a:focus-visible{outline:3px solid var(--brand); outline-offset:2px}
+h1{font-size:clamp(1.6rem,4.5vw,2.2rem); line-height:1.2; margin:0 0 12px}
+h2{font-size:1.05rem; margin:0 0 4px}
+.lead{color:var(--muted); margin:0 0 28px; max-width:60ch}
+.board,.info{background:var(--panel); border:1px solid var(--line); border-radius:8px}
+.info{margin-top:20px; padding:18px}
+.row{display:flex; gap:14px; align-items:center; padding:14px 18px; border-top:1px solid var(--line); color:inherit; text-decoration:none}
+.row:first-child{border-top:0}
+a.row:hover{background:color-mix(in srgb,var(--brand) 7%,transparent)}
+.lamp{flex:none; width:12px; height:12px; border-radius:50%}
+.lamp.down{background:var(--down); box-shadow:0 0 0 4px color-mix(in srgb,var(--down) 22%,transparent); animation:pulse 2.4s ease-in-out infinite}
+.lamp.ok{background:var(--ok); box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 22%,transparent)}
+@keyframes pulse{50%{box-shadow:0 0 0 7px color-mix(in srgb,var(--down) 6%,transparent)}}
+@media (prefers-reduced-motion:reduce){.lamp.down{animation:none}}
+.name{flex:1; min-width:0}
+.name b{color:var(--brand)}
+.name small{display:block; color:var(--muted); font-size:.875rem}
+.state{font-size:.875rem; color:var(--muted); white-space:nowrap}
+@media (max-width:480px){.state{display:none}}
+dl{margin:0; display:grid; grid-template-columns:max-content 1fr; gap:6px 18px}
+dt{color:var(--muted)}
+dd{margin:0; overflow-wrap:anywhere}
+a{color:var(--brand)}
+.info p{margin:0 0 10px}
+.info + .info{margin-top:12px}
+.sup{display:grid; gap:12px}
+@media (max-width:480px){dl{grid-template-columns:1fr} dt{margin-top:6px}}
+[data-l]{display:none}
+html[lang="ru"] [data-l="ru"], html[lang="en"] [data-l="en"]{display:revert}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="logo">Rapid <span>SCADA</span></div>
+    <div class="lang" role="group" aria-label="Язык / Language">
+      <button type="button" data-set="ru" aria-pressed="true">RU</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <h1><span data-l="ru">Сайт временно недоступен</span><span data-l="en">The website is temporarily unavailable</span></h1>
+  <p class="lead">
+    <span data-l="ru">У нашего хостинг-провайдера возникли технические проблемы, мы работаем над восстановлением сайта. Пока вы можете открыть документацию и скачать дистрибутив и модули по ссылкам ниже.</span>
+    <span data-l="en">Our hosting provider is having technical problems and we are working to restore the site. In the meantime, you can open the documentation and download the distribution and modules using the links below.</span>
+  </p>
+
+  <div class="board">
+    <div class="row">
+      <span class="lamp down" aria-hidden="true"></span>
+      <div class="name"><span data-l="ru">Основной сайт</span><span data-l="en">Main website</span></div>
+      <span class="state"><span data-l="ru">недоступен</span><span data-l="en">offline</span></span>
+    </div>
+    <a class="row" href="https://rapidscada.net/docs/">
+      <span class="lamp ok" aria-hidden="true"></span>
+      <span class="name"><b><span data-l="ru">Документация</span><span data-l="en">Documentation</span></b>
+        <small>rapidscada.net/docs</small></span>
+    </a>
+    <a class="row" href="https://drive.google.com/drive/folders/1YS87G-LwMwqK7Tbbc5go_UwMI8jZNvHv?usp=drive_link">
+      <span class="lamp ok" aria-hidden="true"></span>
+      <span class="name"><b><span data-l="ru">Скачать основной дистрибутив</span><span data-l="en">Download the main distribution</span></b>
+        <small>Google Drive</small></span>
+    </a>
+    <a class="row" href="https://drive.google.com/drive/folders/1i5cEAVs67vpgGpYR_aPDKgD7as65Bfqy?usp=drive_link">
+      <span class="lamp ok" aria-hidden="true"></span>
+      <span class="name"><b><span data-l="ru">Скачать модули</span><span data-l="en">Download modules</span></b>
+        <small>Google Drive</small></span>
+    </a>
+  </div>
+
+  <section class="info" aria-labelledby="support">
+    <h2 id="support"><span data-l="ru">Поддержка</span><span data-l="en">Support</span></h2>
+    <div class="sup">
+      <p>
+        <span data-l="ru"><strong>Платная поддержка</strong> оказывается в обычном режиме через тикет-трекер.</span>
+        <span data-l="en"><strong>Paid support</strong> is provided as usual through the ticket tracker.</span>
+      </p>
+      <p>
+        <span data-l="ru"><strong>Бесплатная поддержка</strong> — по электронной почте: <a href="mailto:support@rapidscada.org">support@rapidscada.org</a></span>
+        <span data-l="en"><strong>Free support</strong> is available by email: <a href="mailto:support@rapidscada.org">support@rapidscada.org</a></span>
+      </p>
+    </div>
+  </section>
+
+  <section class="info" aria-labelledby="contacts">
+    <h2 id="contacts"><span data-l="ru">Контакты</span><span data-l="en">Contacts</span></h2>
+    <dl>
+      <dt><span data-l="ru">Email (основной)</span><span data-l="en">Email (primary)</span></dt>
+      <dd><a href="mailto:info@rapidscada.org">info@rapidscada.org</a></dd>
+      <dt><span data-l="ru">Email (резервный)</span><span data-l="en">Email (backup)</span></dt>
+      <dd><a href="mailto:rapidscadasoft@gmail.com">rapidscadasoft@gmail.com</a></dd>
+      <dt><span data-l="ru">Телефон</span><span data-l="en">Phone</span></dt>
+      <dd><a href="tel:+79529513612">+7-952-951-36-12</a></dd>
+    </dl>
+  </section>
+</main>
+
+<script>
+(function(){
+  var html=document.documentElement, btns=document.querySelectorAll('[data-set]');
+  function set(l){
+    html.lang=l;
+    btns.forEach(function(b){b.setAttribute('aria-pressed', b.dataset.set===l)});
+    document.title = l==='ru' ? 'Rapid SCADA — сайт временно недоступен' : 'Rapid SCADA — website temporarily unavailable';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  set(saved || ((navigator.language||'ru').toLowerCase().indexOf('ru')===0 ? 'ru' : 'en'));
+})();
+</script>
+</body>
+</html>
